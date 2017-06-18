@@ -1,5 +1,5 @@
 #include "stdio.h"
-#include "sf_tmr.h"
+#include "sf_timer.h"
 //#define SF_TMR_DEBUG
 /*****************************************************************************
  * ¡ŸΩÁ±£ª§
@@ -16,12 +16,12 @@ void spinlock_unlock()
 /*****************************************************************************/
 static struct list_head __g_tmr_list;
 
-void sf_tmr_lib_init()
+void sf_timer_lib_init()
 {
 	INIT_LIST_HEAD(&__g_tmr_list);
 }
 
-void sf_tmr_tick_handle()
+void sf_timer_tick_handle()
 {
 	spinlock_lock();
 
